@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,9 +72,10 @@
     </tr>
 </table>
 <button type="button" class="btn btn-outline-primary" onclick="location.href='list'">목록보기</button>
+<c:if test ="${sessionScope.customInfo.name == msg.writer }">
 <button type="button" class="btn btn-outline-secondary" onclick="location.href='write?num=${param.num}'">수정</button>
 <button type="button" class="btn btn-outline-success" onclick="location.href='delete?num=${param.num}'">삭제</button>
-
+</c:if>
 </div>
 </body>
 </html>
